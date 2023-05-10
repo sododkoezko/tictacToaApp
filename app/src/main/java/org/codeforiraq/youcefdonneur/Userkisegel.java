@@ -36,17 +36,17 @@ public class Userkisegel extends AppCompatActivity {
         String b=extras.getString("name");
         String d=extras1.getString("phone");
         textView.setText(b);
-        layout2.setOnClickListener(new View.OnClickListener() {
+        constraintLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent s=new Intent(Userkisegel.this,MainActivity5.class);
                 startActivity(s);
             }
         });
-        constraintLayout.setOnClickListener(new View.OnClickListener() {
+        layout2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(Userkisegel.this,MainActivity3.class);
+                Intent intent=new Intent(Userkisegel.this,Rendivou.class);
                 intent.putExtra("phone",d);
                 startActivity(intent);
             }

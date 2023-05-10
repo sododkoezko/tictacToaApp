@@ -40,11 +40,12 @@ TextView sing;
         phone=findViewById(R.id.s1);
         password=findViewById(R.id.s2);
         sing=findViewById(R.id.textView14);
-        String phone1=phone.getText().toString();
-        String password1=password.getText().toString();
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String phone1=phone.getText().toString();
+                String password1=password.getText().toString();
                 if(phone1.isEmpty()||password1.isEmpty()){
                     Toast.makeText(Admin.this, "Compléter tous les champs", Toast.LENGTH_SHORT).show();
                 }else
@@ -56,6 +57,8 @@ TextView sing;
                                 if(getpassword.equals(password1)){
                                     Toast.makeText(Admin.this, "seccessfully loghged in", Toast.LENGTH_SHORT).show();
                                     Intent g=new Intent(Admin.this,Userkisegel.class);
+
+                                    g.putExtra("phone",phone1);
                                     startActivity(g);
 
                                 }

@@ -24,143 +24,96 @@ import java.util.HashMap;
 public class MainActivity4 extends AppCompatActivity {
     Button button;
     CalendarView calendarView;
-    RadioGroup radioGroup1;
-    Boolean n1,n2,n3,n4,n5,n6,n7,n8;
-    String fi;
-    Bundle extras;
-    int reserve;
-String data ;
+RadioGroup radioGroup;
+    String temps;
+    String date;
     DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReferenceFromUrl("https://pemition-f968a-default-rtdb.firebaseio.com/user");
 
-    @SuppressLint("MissingInflatedId")
+    @SuppressLint({"MissingInflatedId", "WrongViewCast"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main4);
-        calendarView=findViewById(R.id.calendarView2);
         button=findViewById(R.id.button6);
-        radioGroup1=findViewById(R.id.group11);
-        extras=getIntent().getExtras();
-        String g=extras.getString("name9");
-        n1=false;
-        n2=false;
-        n3=false;
-        n4=false;
-        n5=false;
-        n6=false;
-        n7=false;
-        n8=false;
-        data="no";
-        fi="";
-        reserve=0;
 
 
-chek();
-caland();
-
-button.setOnClickListener(new View.OnClickListener() {
-    @Override
-    public void onClick(View view) {
-        if(n1==false || n2==false ||n3==false || n4==false ||
-                n5==false || n6==false ||n7==false || n8==false){
-            Toast.makeText(MainActivity4.this, "choisir le temp", Toast.LENGTH_SHORT).show();
-
-        }else if(data=="no") {
-            Toast.makeText(MainActivity4.this, "choisir la date ", Toast.LENGTH_SHORT).show();
-        }else{
-
-            databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot snapshot) {
-
-
-                    databaseReference.child("les rendez vous").child(g).child("date").setValue(data);
-                    databaseReference.child("les rendez vous").child(g).child("temps").setValue(fi);
-                    databaseReference.child("les rendez vous").child(g).child("number de reservation ").setValue(reserve);
-
-                    Toast.makeText(MainActivity4.this, "rejistred", Toast.LENGTH_SHORT).show();
-                    finish();
-                    Intent i = new Intent(MainActivity4.this, Userkisegel.class);
-
-                    startActivity(i);
-
-                }
-
-                @Override
-                public void onCancelled(@NonNull DatabaseError error) {
-
-                }
-            });
-
-                /**
-                 * This method will be triggered in the event that this listener either failed at the server, or
-                 * is removed as a result of the security and Firebase Database rules. For more information on
-                 * securing your data, see: <a
-                 * href="https://firebase.google.com/docs/database/security/quickstart" target="_blank"> Security
-                 * Quickstart</a>
-                 *
-                 * @param error A description of the error that occurred
-                 */
-
-
-
-            };
-        }
-
-    });
-    }
-
-
-    private void caland() {
-        calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
+        date="";
+        temps="";
+        button.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onSelectedDayChange(@NonNull CalendarView calendarView, int i, int i1, int i2) {
-                data=""+i/i1/i2;
-                reserve=reserve+1;
+            public void onClick(View view) {
+                calendarView=findViewById(R.id.calendarView2);
+                radioGroup=findViewById(R.id.group11);
+
+                chek();
+                calender();
+                final String temps1=temps;
+                 final String date1=date;
+               if(date1.isEmpty()||temps1.isEmpty()){
+                   Toast.makeText(MainActivity4.this, "choisir le temps ou la date", Toast.LENGTH_SHORT).show();
+               }else {
+                   databaseReference.child("les rendez vous").child("Date").setValue(date1);
+                   databaseReference.child("les rendez vous").child("Tepms").setValue(temps1);
+                   Toast.makeText(MainActivity4.this, "rejistred", Toast.LENGTH_SHORT).show();
+                   finish();
+
+                }
+            }
+
+
+
+
+        });
+
+    }
+    private void chek() {
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                RadioButton radioButton=findViewById(i);
+                switch (radioButton.getId()) {
+                    case R.id.f1:{
+                        temps=radioButton.getText().toString();
+                    }break;
+                    case R.id.f2: {
+                        temps=radioButton.getText().toString();
+                    }break;
+                    case R.id.f3: {
+                        temps=radioButton.getText().toString();
+                    }break;
+                    case R.id.f4: {
+                        temps=radioButton.getText().toString();
+                    }break;
+                    case R.id.f5: {
+                        temps=radioButton.getText().toString();
+                    }break;
+                    case R.id.f6: {
+                        temps=radioButton.getText().toString();
+                    }break;
+                    case R.id.f7: {
+                        temps=radioButton.getText().toString();
+                    }break;
+                    case R.id.f8: {
+                        temps=radioButton.getText().toString();
+                    }break;
+
+
+                }
             }
         });
     }
-
-    private void chek() {
-        radioGroup1.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+    private void calender() {
+        calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
-            public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                RadioButton radioButton = findViewById(i);
-                switch (radioButton.getId()) {
-                    case R.id.radioButton22: {
-                         fi=radioButton.getText().toString();
-                        n1=true;
-                    }break;
-                    case R.id.radioButton23: {
-                       fi=radioButton.getText().toString();
-                        n2=true;
-                    }break;
-                    case R.id.radioButton20: {
-                        fi=radioButton.getText().toString();
-                        n3=true;
-                    }break;
-                    case R.id.radioButton21: {
-                      fi=radioButton.getText().toString();
-                        n4=true;
-                    }break;
-                    case R.id.radioButton19: {
-                      fi=radioButton.getText().toString();
-                        n5=true;
-                    }break;
-                    case R.id.radioButton18: {
-                       fi=radioButton.getText().toString();
-                        n6=true;
-                    }break;
-                    case R.id.radioButton26: {
-                        fi=radioButton.getText().toString();
-                        n7=true;
-                    }break;
-                    case R.id.radioButton27: {
-                        fi=radioButton.getText().toString();
-                        n8=true;
-                    }break;
-                }
+            public void onSelectedDayChange(@NonNull CalendarView calendarView, int i, int i1, int i2) {
+                date="year"+i+"-"+"Monthe :"+i+"-"+"Day"+i2;
             }
         });
     }
 }
+/*    RadioGroup radioGroup1;
+    Boolean n1,n2,n3,n4,n5,n6,n7,n8;
+    String fi;
+    Bundle extras;
+    int reserve;
+String data ;*/

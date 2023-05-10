@@ -81,6 +81,7 @@ public class Sing extends AppCompatActivity {
                                 finish();
                                 Intent i=new Intent(Sing.this,Userkisegel.class);
                                 i.putExtra("name",nametxt);
+
                                 startActivity(i);
                             }
                         }
