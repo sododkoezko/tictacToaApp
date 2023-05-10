@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "717213817601",
+    "project_id": "pemition-f968a",
+    "storage_bucket": "pemition-f968a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:717213817601:android:453ad75dc253ca0dc89900",
+        "android_client_info": {
+          "package_name": "org.codeforiraq.youcefdonneur"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "717213817601-86ennq16f2c3ok3fp8f7qilq9h1fjkrd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBL02NHxl46vo-bUKWf4xozwZKP8LVraAo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "717213817601-86ennq16f2c3ok3fp8f7qilq9h1fjkrd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

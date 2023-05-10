@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "946120061486",
+    "project_id": "donner-badcf",
+    "storage_bucket": "donner-badcf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:946120061486:android:f933752cd592a6c4b565bf",
+        "android_client_info": {
+          "package_name": "org.codeforiraq.youcefdonneur"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "946120061486-h6mr7nr38ciiq9roaanru43qsp68s70g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAXvtqznz0jG9jHENvTWvDYj8WHmK8FMe0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "946120061486-h6mr7nr38ciiq9roaanru43qsp68s70g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
