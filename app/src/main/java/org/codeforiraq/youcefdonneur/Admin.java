@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -29,6 +30,7 @@ public class Admin extends AppCompatActivity {
 LinearLayout layout;
 Button button;
 TextView sing;
+    private FirebaseAuth mAuth;
     TextInputEditText phone,password;
     DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReferenceFromUrl("https://pemition-f968a-default-rtdb.firebaseio.com/");
     @SuppressLint("MissingInflatedId")
@@ -40,6 +42,9 @@ TextView sing;
         phone=findViewById(R.id.s1);
         password=findViewById(R.id.s2);
         sing=findViewById(R.id.textView14);
+        mAuth = FirebaseAuth.getInstance();
+
+
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,7 +53,9 @@ TextView sing;
                 String password1=password.getText().toString();
                 if(phone1.isEmpty()||password1.isEmpty()){
                     Toast.makeText(Admin.this, "Compléter tous les champs", Toast.LENGTH_SHORT).show();
-                }else
+                }else if(!phone1.isEmpty()||!password1.isEmpty()){
+                    emailAuth(phone1,password1);}
+                else{
                     databaseReference.child("user").addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -74,8 +81,11 @@ TextView sing;
                         public void onCancelled(@NonNull DatabaseError error) {
 
                         }
-                    });
-            }
+                    });}
+
+
+
+                 }
         });
 
         sing.setOnClickListener(new View.OnClickListener() {
@@ -86,6 +96,31 @@ TextView sing;
             }
         });
 
+
+    }
+    private void emailAuth(String em,String pass){
+        mAuth.signInWithEmailAndPassword(em, pass)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            // Sign in success, update UI with the signed-in user's information
+                            //Log.d(TAG, "signInWithEmail:success");
+                            FirebaseUser user = mAuth.getCurrentUser();
+                            Toast.makeText(Admin.this, "Authentication seccess.",
+                                    Toast.LENGTH_SHORT).show();
+                            Intent intent=new Intent(Admin.this,AdminKISEJEL.class);
+                            startActivity(intent);
+                            //updateUI(user);
+                        } else {
+                            // If sign in fails, display a message to the user.
+                            //Log.w(TAG, "signInWithEmail:failure", task.getException());
+                            Toast.makeText(Admin.this, "Authentication failed.",
+                                    Toast.LENGTH_SHORT).show();
+                            //updateUI(null);
+                        }
+                    }
+                });
 
     }
 }

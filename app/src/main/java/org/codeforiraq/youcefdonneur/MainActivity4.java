@@ -1,10 +1,13 @@
 package org.codeforiraq.youcefdonneur;
 
+import static org.codeforiraq.youcefdonneur.Sing.MYKEY;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -27,7 +30,7 @@ public class MainActivity4 extends AppCompatActivity {
 RadioGroup radioGroup;
     String temps;
     String date;
-    DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReferenceFromUrl("https://pemition-f968a-default-rtdb.firebaseio.com/user");
+    DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReferenceFromUrl("https://pemition-f968a-default-rtdb.firebaseio.com/");
 
     @SuppressLint({"MissingInflatedId", "WrongViewCast"})
     @Override
@@ -35,25 +38,27 @@ RadioGroup radioGroup;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main4);
         button=findViewById(R.id.button6);
-
+        calendarView=findViewById(R.id.calendarView2);
+        radioGroup=findViewById(R.id.group11);
 
         date="";
         temps="";
+        chek();
+        calender();
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                calendarView=findViewById(R.id.calendarView2);
-                radioGroup=findViewById(R.id.group11);
-
                 chek();
                 calender();
-                final String temps1=temps;
-                 final String date1=date;
-               if(date1.isEmpty()||temps1.isEmpty()){
+
+               if(date.isEmpty()||temps.isEmpty()){
                    Toast.makeText(MainActivity4.this, "choisir le temps ou la date", Toast.LENGTH_SHORT).show();
                }else {
-                   databaseReference.child("les rendez vous").child("Date").setValue(date1);
-                   databaseReference.child("les rendez vous").child("Tepms").setValue(temps1);
+                   SharedPreferences preferences1=getSharedPreferences(MYKEY,0);
+                     String pref= preferences1.getString("key","not foond");
+
+                   databaseReference.child("les rendez vous").child(pref).child("Date").setValue(date);
+                   databaseReference.child("les rendez vous").child(pref).child("temps").setValue(temps);
                    Toast.makeText(MainActivity4.this, "rejistred", Toast.LENGTH_SHORT).show();
                    finish();
 
@@ -106,7 +111,7 @@ RadioGroup radioGroup;
         calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(@NonNull CalendarView calendarView, int i, int i1, int i2) {
-                date="year"+i+"-"+"Monthe :"+i+"-"+"Day"+i2;
+                date="year"+i+"/"+"Monthe :"+i1+"/"+"Day"+i2;
             }
         });
     }

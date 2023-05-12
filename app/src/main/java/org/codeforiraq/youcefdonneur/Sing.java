@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -25,6 +26,8 @@ public class Sing extends AppCompatActivity {
     DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReferenceFromUrl("https://pemition-f968a-default-rtdb.firebaseio.com/");
     private Button button;
    // String b;
+   SharedPreferences sharedPreferences;
+    static final String MYKEY="secret";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,6 +82,10 @@ public class Sing extends AppCompatActivity {
                                 databaseReference.child("user").child(phonetxt).child("le sex").setValue(sextxt);
                                 Toast.makeText(Sing.this, "rejistred", Toast.LENGTH_SHORT).show();
                                 finish();
+                                sharedPreferences = getSharedPreferences(MYKEY,0);
+                                SharedPreferences.Editor editor=sharedPreferences.edit();
+                                editor.putString("key",phonetxt);
+                                editor.commit();
                                 Intent i=new Intent(Sing.this,Userkisegel.class);
                                 i.putExtra("name",nametxt);
 
