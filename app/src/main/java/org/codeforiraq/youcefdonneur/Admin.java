@@ -1,5 +1,7 @@
 package org.codeforiraq.youcefdonneur;
 
+import static org.codeforiraq.youcefdonneur.Sing.MYKEY;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -33,7 +35,7 @@ TextView sing;
     private FirebaseAuth mAuth;
     TextInputEditText phone,password;
     SharedPreferences sharedPreferences;
-    static final String MYKEY1="admin";
+    static final String MYKEY="secret";
     DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReferenceFromUrl("https://pemition-f968a-default-rtdb.firebaseio.com/");
     @SuppressLint("MissingInflatedId")
     @Override
@@ -72,7 +74,7 @@ TextView sing;
                                 String getpassword=snapshot.child(phone1).child("password").getValue(String.class);
                                 if(getpassword.equals(password1)){
                                     Toast.makeText(Admin.this, "seccessfully loghged in", Toast.LENGTH_SHORT).show();
-                                    sharedPreferences = getSharedPreferences(MYKEY1,0);
+                                    sharedPreferences = getSharedPreferences(MYKEY,0);
                                     SharedPreferences.Editor editor=sharedPreferences.edit();
                                     editor.putString("ke",phone1);
                                     editor.commit();

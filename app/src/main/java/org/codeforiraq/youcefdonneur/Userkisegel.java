@@ -1,6 +1,5 @@
 package org.codeforiraq.youcefdonneur;
 
-import static org.codeforiraq.youcefdonneur.Admin.MYKEY1;
 import static org.codeforiraq.youcefdonneur.Sing.MYKEY;
 
 import android.annotation.SuppressLint;
@@ -66,7 +65,7 @@ public class Userkisegel extends AppCompatActivity {
         //extras1=getIntent().getExtras();
        // String b=extras.getString("name");
        //  d=extras1.getString("phone");
-        getdata1();
+
         getdata();
 
 
@@ -156,7 +155,7 @@ public class Userkisegel extends AppCompatActivity {
         });
 
     }
-    public void getdata1(){
+ /*   public void getdata1(){
         myRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -194,7 +193,7 @@ public class Userkisegel extends AppCompatActivity {
                     }
                  /* if(getsex.equals("Homme")){
                       imageView2.setImageDrawable(getResources().getDrawable(R.drawable.golen));
-                  }*/
+                  }
 
                 }else{
                     Toast.makeText(Userkisegel.this, "fild to load data", Toast.LENGTH_SHORT).show();
@@ -207,5 +206,5 @@ public class Userkisegel extends AppCompatActivity {
             }
         });
 
-    }
+    }*/
 }
