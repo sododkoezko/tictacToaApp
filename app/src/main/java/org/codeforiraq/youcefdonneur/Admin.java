@@ -32,6 +32,8 @@ Button button;
 TextView sing;
     private FirebaseAuth mAuth;
     TextInputEditText phone,password;
+    SharedPreferences sharedPreferences;
+    static final String MYKEY1="admin";
     DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReferenceFromUrl("https://pemition-f968a-default-rtdb.firebaseio.com/");
     @SuppressLint("MissingInflatedId")
     @Override
@@ -51,29 +53,42 @@ TextView sing;
             public void onClick(View view) {
                 String phone1=phone.getText().toString();
                 String password1=password.getText().toString();
+
                 if(phone1.isEmpty()||password1.isEmpty()){
                     Toast.makeText(Admin.this, "Compléter tous les champs", Toast.LENGTH_SHORT).show();
-                }else if(!phone1.isEmpty()||!password1.isEmpty()){
-                    emailAuth(phone1,password1);}
+                }
                 else{
-                    databaseReference.child("user").addListenerForSingleValueEvent(new ValueEventListener() {
+
+                   // if(!phone1.isEmpty()||!password1.isEmpty()){
+                     //   emailAuth(phone1,password1);
+                    //}
+
+
+
+                  databaseReference.child("user").addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
                             if(snapshot.hasChild(phone1)){
                                 String getpassword=snapshot.child(phone1).child("password").getValue(String.class);
                                 if(getpassword.equals(password1)){
                                     Toast.makeText(Admin.this, "seccessfully loghged in", Toast.LENGTH_SHORT).show();
+                                    sharedPreferences = getSharedPreferences(MYKEY1,0);
+                                    SharedPreferences.Editor editor=sharedPreferences.edit();
+                                    editor.putString("ke",phone1);
+                                    editor.commit();
                                     Intent g=new Intent(Admin.this,Userkisegel.class);
 
-                                    g.putExtra("phone",phone1);
+                                   // g.putExtra("phone",phone1);
                                     startActivity(g);
 
                                 }
                                 else{
                                     Toast.makeText(Admin.this, "Wrong Password", Toast.LENGTH_SHORT).show();
+
                                 }
                             } else{
                                 Toast.makeText(Admin.this, "Wrong Password", Toast.LENGTH_SHORT).show();
+
                             }
                         }
 
@@ -82,10 +97,11 @@ TextView sing;
 
                         }
                     });}
-
+                emailAuth(phone1,password1);
 
 
                  }
+
         });
 
         sing.setOnClickListener(new View.OnClickListener() {

@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/banner"
-    tools:context=".Modifielesang">
+    tools:context=".Ficheanalise">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="362dp"
+        android:layout_width="380dp"
         android:layout_height="684dp"
         android:background="@drawable/button"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -23,7 +23,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="-590dp"
-            android:text="Modifie l'a Quantité"
+            android:text="Fichier d'analyse"
             android:textColor="#3FAE18"
             android:textSize="34sp"
             android:textStyle="bold|italic"
@@ -35,8 +35,8 @@
             app:layout_constraintVertical_bias="0.5" />
 
         <LinearLayout
-            android:layout_width="357dp"
-            android:layout_height="509dp"
+            android:layout_width="370dp"
+            android:layout_height="550dp"
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -47,7 +47,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="52dp"
+                android:layout_height="60dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -56,7 +56,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="-10dp"
                     android:layout_weight="1"
-                    android:text="Quantité A+" />
+                    android:text="phone" />
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
@@ -68,17 +68,17 @@
                     app:endIconTint="@color/purple_500">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/ap"
+                        android:id="@+id/phone"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Entré la Quantité" />
+                        android:hint="Entré la contité" />
                 </com.google.android.material.textfield.TextInputLayout>
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="52dp"
+                android:layout_height="60dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -86,7 +86,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="-10dp"
                     android:layout_weight="1"
-                    android:text="Quantité B+" />
+                    android:text="L'état de santé" />
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
@@ -98,25 +98,25 @@
                     app:endIconTint="@color/purple_500">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/bp"
+                        android:id="@+id/santé"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Entré la Quantité" />
+                        android:hint="Entré la contité" />
                 </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="52dp"
+                android:layout_height="60dp"
                 android:orientation="horizontal">
 
                 <TextView
                     android:id="@+id/textView24"
                     android:layout_width="194dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="-10dp"
+                    android:layout_marginTop="-20dp"
                     android:layout_weight="1"
-                    android:text="Quantité A-" />
+                    android:text="le nombre de globule blancs" />
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
@@ -128,25 +128,26 @@
                     app:endIconTint="@color/purple_500">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/an"
+                        android:id="@+id/globileb"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Entré la Quantité" />
+                        android:hint="Entré la contité" />
                 </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="52dp"
+                android:layout_height="60dp"
                 android:orientation="horizontal">
 
                 <TextView
                     android:id="@+id/textView25"
                     android:layout_width="194dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="-10dp"
+                    android:layout_marginTop="-15dp"
                     android:layout_weight="1"
-                    android:text="Quantité B-" />
+
+                    android:text="le nombre de globule rouge" />
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
@@ -158,16 +159,16 @@
                     app:endIconTint="@color/purple_500">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/bn"
+                        android:id="@+id/globiler"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Entré la Quantité" />
+                        android:hint="Entré la contité" />
                 </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="52dp"
+                android:layout_height="60dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -176,7 +177,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="-10dp"
                     android:layout_weight="1"
-                    android:text="Quantité AB+" />
+                    android:text="Contité d'hémoglobine" />
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
@@ -188,25 +189,25 @@
                     app:endIconTint="@color/purple_500">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/abp"
+                        android:id="@+id/démog"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Entré la Quantité" />
+                        android:hint="Entré la contité" />
                 </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="52dp"
+                android:layout_height="60dp"
                 android:orientation="horizontal">
 
                 <TextView
                     android:id="@+id/textView27"
                     android:layout_width="194dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="-10dp"
+                    android:layout_marginTop="-15dp"
                     android:layout_weight="1"
-                    android:text="Quantité o-" />
+                    android:text="Contité d'hématocrite" />
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
@@ -218,16 +219,16 @@
                     app:endIconTint="@color/purple_500">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/on"
+                        android:id="@+id/déma"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Entré la Quantité" />
+                        android:hint="Entré la contité" />
                 </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="52dp"
+                android:layout_height="60dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -236,7 +237,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="-10dp"
                     android:layout_weight="1"
-                    android:text="Quantité AB-" />
+                    android:text="Acceptation" />
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
@@ -248,40 +249,10 @@
                     app:endIconTint="@color/purple_500">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/abn"
+                        android:id="@+id/accép"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Entré la Quantité" />
-                </com.google.android.material.textfield.TextInputLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="52dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/textView29"
-                    android:layout_width="194dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="-10dp"
-                    android:layout_weight="1"
-                    android:text="Quantité o+" />
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    app:boxBackgroundColor="#00FFFFFF"
-                    app:boxBackgroundMode="outline"
-                    app:endIconMode="clear_text"
-                    app:endIconTint="@color/purple_500">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/op"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="Entré la Quantité" />
+                        android:hint="Entré la contité" />
                 </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
 
@@ -289,10 +260,10 @@
                 android:id="@+id/button2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Modifié"
-                android:layout_marginTop="20dp"
                 android:layout_marginStart="80dp"
-                android:layout_marginEnd="80dp"/>
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="80dp"
+                android:text="Evoyer" />
         </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

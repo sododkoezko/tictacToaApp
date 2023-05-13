@@ -3,18 +3,17 @@ package org.codeforiraq.youcefdonneur;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputEditText;
-import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -28,7 +27,9 @@ public class Sing extends AppCompatActivity {
    // String b;
    SharedPreferences sharedPreferences;
     static final String MYKEY="secret";
+    RadioGroup radioGroup2,radioGroup;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,6 +42,8 @@ public class Sing extends AppCompatActivity {
         email=findViewById(R.id.email);
         sex=findViewById(R.id.sex);
         button=findViewById(R.id.button3);
+         radioGroup2 = findViewById(R.id.n1);
+         radioGroup=findViewById(R.id.n2);
 //b="";
         check2();
         check1();
@@ -87,7 +90,7 @@ public class Sing extends AppCompatActivity {
                                 editor.putString("key",phonetxt);
                                 editor.commit();
                                 Intent i=new Intent(Sing.this,Userkisegel.class);
-                                i.putExtra("name",nametxt);
+                              //  i.putExtra("name",nametxt);
 
                                 startActivity(i);
                             }
@@ -116,7 +119,7 @@ public class Sing extends AppCompatActivity {
         sex.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                RadioGroup radioGroup=findViewById(R.id.n2);
+
                 radioGroup.setVisibility(View.VISIBLE);
                 radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
                     @Override
@@ -145,7 +148,7 @@ public class Sing extends AppCompatActivity {
         typedesang.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                RadioGroup radioGroup2 = findViewById(R.id.n1);
+
                 radioGroup2.setVisibility(View.VISIBLE);
                 radioGroup2.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
                     @Override

@@ -39,7 +39,7 @@ public class MainActivity2 extends AppCompatActivity {
         sex.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                RadioGroup radioGroup=findViewById(R.id.n2);
+                RadioGroup radioGroup=findViewById(R.id.n1);
                 radioGroup.setVisibility(View.VISIBLE);
                 radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
                     @Override
@@ -134,7 +134,7 @@ public class MainActivity2 extends AppCompatActivity {
         sex.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                RadioGroup radioGroup = findViewById(R.id.n2);
+                RadioGroup radioGroup = findViewById(R.id.n1);
                 radioGroup.setVisibility(View.VISIBLE);
                 radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
                     @Override

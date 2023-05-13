@@ -4,12 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/material_dynamic_neutral70"
     tools:context=".MainActivity4">
 
     <CalendarView
         android:id="@+id/calendarView2"
-        android:layout_width="370dp"
-        android:layout_height="241dp"
+        android:layout_width="371dp"
+        android:layout_height="255dp"
         android:background="#FFFFFF"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -24,7 +25,7 @@
         android:layout_height="370dp"
 
         android:layout_marginTop="210dp"
-        android:background="@drawable/banner"
+        android:background="@drawable/button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -37,56 +38,56 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="08:00-09:00"
-            android:textColor="#FFFFFF" />
+            android:textColor="#000000" />
 
         <RadioButton
             android:id="@+id/f2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="09:00-10:00"
-            android:textColor="#FFFFFF" />
+            android:textColor="#000000" />
 
         <RadioButton
             android:id="@+id/f3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="10:00-11:00"
-            android:textColor="#FFFFFF" />
+            android:textColor="#000000" />
 
         <RadioButton
             android:id="@+id/f4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="11:00-12:00"
-            android:textColor="#FFFFFF" />
+            android:textColor="#000000" />
 
         <RadioButton
             android:id="@+id/f5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="12:00-13:00"
-            android:textColor="#FFFFFF" />
+            android:textColor="#000000" />
 
         <RadioButton
             android:id="@+id/f6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="13:00-14:00"
-            android:textColor="#FFFFFF" />
+            android:textColor="#000000" />
 
         <RadioButton
             android:id="@+id/f7"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="12:00-15:00"
-            android:textColor="#FFFFFF" />
+            android:textColor="#000000" />
 
         <RadioButton
             android:id="@+id/f8"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="15:00-16:00"
-            android:textColor="#FFFFFF"
+            android:textColor="#000000"
             tools:ignore="TouchTargetSizeCheck" />
     </RadioGroup>
 
@@ -94,7 +95,7 @@
         android:id="@+id/button6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
+        android:text="Prener render-vouds"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"

@@ -26,7 +26,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.5" />
 
-  <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="356dp"
         android:layout_height="676dp"
         android:background="@drawable/button"
@@ -37,99 +37,100 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.5">
 
-      <com.google.android.material.textfield.TextInputLayout
-          android:id="@+id/typedesang"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:layout_marginStart="20dp"
-          android:layout_marginTop="-180dp"
-          android:layout_marginEnd="20dp"
-          android:hint="Entrer le type de sang"
-          app:boxBackgroundColor="#FFFFFFFF"
-          app:boxBackgroundMode="outline"
-          app:layout_constraintBottom_toBottomOf="parent"
-          app:layout_constraintEnd_toEndOf="parent"
-          app:layout_constraintHorizontal_bias="0.5"
-          app:layout_constraintStart_toStartOf="parent"
-          app:layout_constraintTop_toTopOf="parent"
-          app:layout_constraintVertical_bias="0.5">
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/typedesang"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="-180dp"
+            android:layout_marginEnd="20dp"
+            android:hint="Entrer le type de sang"
+            app:boxBackgroundColor="#FFFFFFFF"
+            app:boxBackgroundMode="outline"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.5">
 
-          <com.google.android.material.textfield.TextInputEditText
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content" />
-      </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:textInputLayoutFocusedRectEnabled="false" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-      <com.google.android.material.textfield.TextInputLayout
-          android:id="@+id/sex"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:layout_marginStart="20dp"
-          android:layout_marginTop="-10dp"
-          android:layout_marginEnd="20dp"
-          android:hint="Entrer le sex"
-          app:boxBackgroundColor="#FFFFFF"
-          app:boxBackgroundMode="outline"
-          app:layout_constraintBottom_toBottomOf="parent"
-          app:layout_constraintEnd_toEndOf="parent"
-          app:layout_constraintHorizontal_bias="0.5"
-          app:layout_constraintStart_toStartOf="parent"
-          app:layout_constraintTop_toTopOf="parent"
-          app:layout_constraintVertical_bias="0.5">
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/sex"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="-10dp"
+            android:layout_marginEnd="20dp"
+            android:hint="Entrer le sex"
+            app:boxBackgroundColor="#FFFFFF"
+            app:boxBackgroundMode="outline"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.5">
 
-          <com.google.android.material.textfield.TextInputEditText
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content" />
-      </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-      <com.google.android.material.textfield.TextInputLayout
-          android:id="@+id/email"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:layout_marginStart="20dp"
-          android:layout_marginTop="160dp"
-          android:layout_marginEnd="20dp"
-          android:hint="l'age"
-          app:boxBackgroundColor="#FFFFFFFF"
-          app:boxBackgroundMode="outline"
-          app:layout_constraintBottom_toBottomOf="parent"
-          app:layout_constraintEnd_toEndOf="parent"
-          app:layout_constraintHorizontal_bias="0.5"
-          app:layout_constraintStart_toStartOf="parent"
-          app:layout_constraintTop_toTopOf="parent"
-          app:layout_constraintVertical_bias="0.5"
-          tools:ignore="DuplicateIds">
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="160dp"
+            android:layout_marginEnd="20dp"
+            android:hint="l'age"
+            app:boxBackgroundColor="#FFFFFFFF"
+            app:boxBackgroundMode="outline"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.5"
+            tools:ignore="DuplicateIds">
 
-          <com.google.android.material.textfield.TextInputEditText
+            <com.google.android.material.textfield.TextInputEditText
 
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content" />
-      </com.google.android.material.textfield.TextInputLayout>
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-      <com.google.android.material.textfield.TextInputLayout
-          android:id="@+id/conf"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:layout_marginStart="20dp"
-          android:layout_marginTop="510dp"
-          android:layout_marginEnd="20dp"
-          android:hint="confirmé le mot de pass "
-          app:boxBackgroundColor="#FFFFFFFF"
-          app:boxBackgroundMode="outline"
-          app:endIconMode="password_toggle"
-          app:endIconTint="@color/purple_500"
-          app:layout_constraintBottom_toBottomOf="parent"
-          app:layout_constraintEnd_toEndOf="parent"
-          app:layout_constraintHorizontal_bias="0.5"
-          app:layout_constraintStart_toStartOf="parent"
-          app:layout_constraintTop_toTopOf="parent"
-          app:layout_constraintVertical_bias="0.5"
-          app:startIconDrawable="@drawable/lock_24"
-          app:startIconTint="@color/purple_500">
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/conf"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="510dp"
+            android:layout_marginEnd="20dp"
+            android:hint="confirmé le mot de pass "
+            app:boxBackgroundColor="#FFFFFFFF"
+            app:boxBackgroundMode="outline"
+            app:endIconMode="password_toggle"
+            app:endIconTint="@color/purple_500"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.5"
+            app:startIconDrawable="@drawable/lock_24"
+            app:startIconTint="@color/purple_500">
 
-          <com.google.android.material.textfield.TextInputEditText
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content" />
-      </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
 
         <LinearLayout
             android:id="@+id/linearLayout2"
@@ -236,115 +237,115 @@
                 android:layout_marginTop="12dp" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <RadioGroup
-            android:id="@+id/n2"
-            android:layout_width="318dp"
-            android:layout_height="119dp"
-            android:layout_marginTop="87dp"
-            android:background="#000000"
-            android:visibility="invisible"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.5"
-            tools:ignore="DuplicateIds,MissingConstraints">
-
-            <RadioButton
-                android:id="@+id/homme"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:checked="true"
-                android:text="Homme"
-                android:textColor="#EFE6E6" />
-
-            <RadioButton
-                android:id="@+id/famme"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Famme"
-                android:textColor="#E8DFDF" />
-
-        </RadioGroup>
-
-      <RadioGroup
-          android:id="@+id/n2"
-          android:layout_width="306dp"
-          android:layout_height="339dp"
-          android:layout_marginTop="90dp"
-          android:background="#000000"
-          android:visibility="invisible"
-          app:layout_constraintBottom_toBottomOf="parent"
-          app:layout_constraintEnd_toEndOf="parent"
-          app:layout_constraintHorizontal_bias="0.5"
-          app:layout_constraintStart_toStartOf="parent"
-          app:layout_constraintTop_toTopOf="parent"
-          app:layout_constraintVertical_bias="0.5"
-          tools:ignore="DuplicateIds,ExtraText,MissingConstraints">
-
-          <RadioButton
-              android:id="@+id/a"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:checked="true"
-              android:text="A+"
-              android:textColor="#EFE6E6" />
-
-          <RadioButton
-              android:id="@+id/ax"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:text="A-"
-              android:textColor="#E8DFDF" />
-
-          <RadioButton
-              android:id="@+id/b"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:checked="true"
-              android:text="B+"
-              android:textColor="#EFE6E6" />
-
-          <RadioButton
-              android:id="@+id/bx"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:text="B-"
-              android:textColor="#E8DFDF" />
-
-          <RadioButton
-              android:id="@+id/fi"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:checked="true"
-              android:text="o+"
-              android:textColor="#EFE6E6" />
-
-          <RadioButton
-              android:id="@+id/fx"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:text="o-"
-              android:textColor="#E8DFDF" />
-
-          <RadioButton
-              android:id="@+id/ab"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:text="AB+"
-              android:textColor="#EFE6E6" />
-
-          <RadioButton
-              android:id="@+id/abx"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:text="AB-"
-              android:textColor="#E8DFDF" />
-
-      </RadioGroup>
-
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <RadioGroup
+        android:id="@+id/n1"
+        android:layout_width="311dp"
+        android:layout_height="427dp"
+        android:layout_marginTop="60dp"
+        android:background="#000000"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5"
+        tools:ignore="DuplicateIds,ExtraText,MissingConstraints">
+
+        <RadioButton
+            android:id="@+id/a"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="A+"
+            android:textColor="#EFE6E6" />
+
+        <RadioButton
+            android:id="@+id/ax"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="A-"
+            android:textColor="#E8DFDF" />
+
+        <RadioButton
+            android:id="@+id/b"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="B+"
+            android:textColor="#EFE6E6" />
+
+        <RadioButton
+            android:id="@+id/bx"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="B-"
+            android:textColor="#E8DFDF" />
+
+        <RadioButton
+            android:id="@+id/fi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="o+"
+            android:textColor="#EFE6E6" />
+
+        <RadioButton
+            android:id="@+id/fx"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="o-"
+            android:textColor="#E8DFDF" />
+
+        <RadioButton
+            android:id="@+id/ab"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="AB+"
+            android:textColor="#EFE6E6" />
+
+        <RadioButton
+            android:id="@+id/abx"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="AB-"
+            android:textColor="#E8DFDF" />
+
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/n2"
+        android:layout_width="318dp"
+        android:layout_height="119dp"
+        android:layout_marginTop="60dp"
+        android:background="#000000"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5"
+        tools:ignore="DuplicateIds,MissingConstraints">
+
+        <RadioButton
+            android:id="@+id/homme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Homme"
+            android:textColor="#EFE6E6" />
+
+        <RadioButton
+            android:id="@+id/famme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Famme"
+            android:textColor="#E8DFDF" />
+
+    </RadioGroup>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

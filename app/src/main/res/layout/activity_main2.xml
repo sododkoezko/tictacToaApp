@@ -215,7 +215,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <RadioGroup
-            android:id="@+id/n2"
+            android:id="@+id/n1"
             android:layout_width="318dp"
             android:layout_height="119dp"
             android:layout_marginTop="87dp"

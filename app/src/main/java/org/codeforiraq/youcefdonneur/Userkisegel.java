@@ -1,5 +1,6 @@
 package org.codeforiraq.youcefdonneur;
 
+import static org.codeforiraq.youcefdonneur.Admin.MYKEY1;
 import static org.codeforiraq.youcefdonneur.Sing.MYKEY;
 
 import android.annotation.SuppressLint;
@@ -10,6 +11,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,7 +24,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class Userkisegel extends AppCompatActivity {
-    LinearLayout layout,layout1,layout2,bin;
+    LinearLayout layout,layout1,layout2,bin,d3;
     ConstraintLayout constraintLayout;
     private TextView textView;
     ImageView imageView1,imageView2,imageView3,imageView4;
@@ -33,7 +35,9 @@ public class Userkisegel extends AppCompatActivity {
     String getage;
     String getsex;
     String gettypedesang;
-
+    SharedPreferences preferences1;
+    String pref;
+    String d;
 
 
 
@@ -53,38 +57,19 @@ public class Userkisegel extends AppCompatActivity {
         constraintLayout=findViewById(R.id.tion);
         imageView1=findViewById(R.id.imageView24);
         imageView2=findViewById(R.id.imageView22);
+        d3=findViewById(R.id.d3);
 
 
 
 
-        extras=getIntent().getExtras();
-        extras1=getIntent().getExtras();
-        String b=extras.getString("name");
-        String d=extras1.getString("phone");
-
-
+       // extras=getIntent().getExtras();
+        //extras1=getIntent().getExtras();
+       // String b=extras.getString("name");
+       //  d=extras1.getString("phone");
+        getdata1();
         getdata();
-        textView.setText(getname);
-        if(gettypedesang.equals("B-")){
-            imageView1.setImageResource(R.drawable.blood);
-        }else if(gettypedesang.equals("A+")){
-            imageView1.setImageResource(R.drawable.gibha);
-        }else if(gettypedesang.equals("A-")){
-            imageView1.setImageResource(R.drawable.giblna);
-        }else if(gettypedesang.equals("AB+")){
-            imageView1.setImageResource(R.drawable.down);
-        }else if(gettypedesang.equals("o-")){
-            imageView1.setImageResource(R.drawable.clack);
-        }else if(gettypedesang.equals("AB-")){
-            imageView1.setImageResource(R.drawable.blo);
-        }else if(gettypedesang.equals("B-")){
-            imageView1.setImageResource(R.drawable.bfown);
-        }else{
-            imageView1.setImageResource(R.drawable.golen);
-        }
-       /* if(getsex.equals("Homme")){
-            imageView2.setImageDrawable(getResources().getDrawable(R.drawable.golen));
-        }*/
+
+
 
         constraintLayout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -109,6 +94,13 @@ public class Userkisegel extends AppCompatActivity {
                 startActivity(i);
             }
         });
+        d3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent fichedonneur=new Intent(Userkisegel.this,donneurFiche.class);
+                startActivity(fichedonneur);
+            }
+        });
 
 
     }
@@ -116,13 +108,97 @@ public class Userkisegel extends AppCompatActivity {
         myRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                SharedPreferences preferences1=getSharedPreferences(MYKEY,0);
-                String pref= preferences1.getString("key","not foond");
-               value=snapshot.getValue(String.class);
-               getname=snapshot.child("user").child(pref).child("name").getValue(String.class);
-                getage=snapshot.child("user").child(pref).child("l'age").getValue(String.class);
-                 getsex=snapshot.child("user").child(pref).child("le sex").getValue(String.class);
-                gettypedesang=snapshot.child("user").child(pref).child("typedesang").getValue(String.class);
+               preferences1=getSharedPreferences(MYKEY,0);
+               pref= preferences1.getString("key","not foond");
+              if(snapshot.exists()) {
+                  getname = snapshot.child("user").child(pref).child("name").getValue(String.class);
+                  getage = snapshot.child("user").child(pref).child("l'age").getValue(String.class);
+                  getsex = snapshot.child("user").child(pref).child("le sex").getValue(String.class);
+                  gettypedesang = snapshot.child("user").child(pref).child("typedesang").getValue(String.class);
+
+
+                  textView.setText(getname);
+                  if(gettypedesang.equals("B-")){
+                      imageView1.setImageResource(R.drawable.bloodbn);
+                  }else if(gettypedesang.equals("A+")){
+                      imageView1.setImageResource(R.drawable.bloodap);
+                  }else if(gettypedesang.equals("A-")){
+
+                      imageView1.setImageResource(R.drawable.downloadan);
+                  }else if(gettypedesang.equals("AB+")){
+
+                      imageView1.setImageResource(R.drawable.bloodabp);
+                  }else if(gettypedesang.equals("o-")){
+
+                      imageView1.setImageResource(R.drawable.clackon);
+                  }else if(gettypedesang.equals("AB-")){
+
+                      imageView1.setImageResource(R.drawable.bloodabn);
+                  }else if(gettypedesang.equals("B+")){
+
+                      imageView1.setImageResource(R.drawable.bfownbn);
+                  }else{
+                      imageView1.setImageResource(R.drawable.golena111);
+                  }
+                 /* if(getsex.equals("Homme")){
+                      imageView2.setImageDrawable(getResources().getDrawable(R.drawable.golen));
+                  }*/
+
+              }else{
+                  Toast.makeText(Userkisegel.this, "fild to load data", Toast.LENGTH_SHORT).show();
+              }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+    public void getdata1(){
+        myRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                preferences1=getSharedPreferences(MYKEY1,0);
+                pref= preferences1.getString("ke","not foond");
+                if(snapshot.exists()) {
+                    getname = snapshot.child("user").child(pref).child("name").getValue(String.class);
+                    getage = snapshot.child("user").child(pref).child("l'age").getValue(String.class);
+                    getsex = snapshot.child("user").child(pref).child("le sex").getValue(String.class);
+                    gettypedesang = snapshot.child("user").child(pref).child("typedesang").getValue(String.class);
+
+
+                    textView.setText(getname);
+                    if(gettypedesang.equals("B-")){
+                        imageView1.setImageResource(R.drawable.bloodbn);
+                    }else if(gettypedesang.equals("A+")){
+                        imageView1.setImageResource(R.drawable.bloodap);
+                    }else if(gettypedesang.equals("A-")){
+
+                        imageView1.setImageResource(R.drawable.downloadan);
+                    }else if(gettypedesang.equals("AB+")){
+
+                        imageView1.setImageResource(R.drawable.bloodabp);
+                    }else if(gettypedesang.equals("o-")){
+
+                        imageView1.setImageResource(R.drawable.clackon);
+                    }else if(gettypedesang.equals("AB-")){
+
+                        imageView1.setImageResource(R.drawable.bloodabn);
+                    }else if(gettypedesang.equals("B+")){
+
+                        imageView1.setImageResource(R.drawable.bfownbn);
+                    }else{
+                        imageView1.setImageResource(R.drawable.golena111);
+                    }
+                 /* if(getsex.equals("Homme")){
+                      imageView2.setImageDrawable(getResources().getDrawable(R.drawable.golen));
+                  }*/
+
+                }else{
+                    Toast.makeText(Userkisegel.this, "fild to load data", Toast.LENGTH_SHORT).show();
+                }
             }
 
             @Override
