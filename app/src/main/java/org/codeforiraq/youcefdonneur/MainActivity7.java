@@ -9,6 +9,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CalendarView;
@@ -22,23 +23,24 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.util.HashMap;
-
-public class MainActivity4 extends AppCompatActivity {
+public class MainActivity7 extends AppCompatActivity {
     Button button;
     CalendarView calendarView;
-RadioGroup radioGroup;
+    RadioGroup radioGroup;
     String temps;
-    String date;
+    String date,t1;
+    int nombre,getnombre;
+
     DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReferenceFromUrl("https://pemition-f968a-default-rtdb.firebaseio.com/");
 
-    @SuppressLint({"MissingInflatedId", "WrongViewCast"})
+
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main4);
-      button=findViewById(R.id.button6);
-        calendarView=findViewById(R.id.calendarView2);
+        setContentView(R.layout.activity_main7);
+        button=findViewById(R.id.button7);
+        calendarView=findViewById(R.id.calendarView);
         radioGroup=findViewById(R.id.group11);
 
         date="";
@@ -51,16 +53,19 @@ RadioGroup radioGroup;
                 chek();
                 calender();
 
-               if(date.isEmpty()||temps.isEmpty()){
-                   Toast.makeText(MainActivity4.this, "choisir le temps ou la date", Toast.LENGTH_SHORT).show();
-               }else {
-                   SharedPreferences preferences1=getSharedPreferences(MYKEY,0);
-                     String pref= preferences1.getString("key","not foond");
+                if(date.isEmpty()||temps.isEmpty()){
+                    Toast.makeText(MainActivity7.this, "choisir le temps ou la date", Toast.LENGTH_SHORT).show();
+                }else {
+                    SharedPreferences preferences1=getSharedPreferences(MYKEY,0);
+                    String pref= preferences1.getString("key","not foond");
 
-                   databaseReference.child("les rendez vous").child(pref).child("Date").setValue(date);
-                   databaseReference.child("les rendez vous").child(pref).child("temps").setValue(temps);
-                   Toast.makeText(MainActivity4.this, "rejistred", Toast.LENGTH_SHORT).show();
-                   finish();
+                    databaseReference.child("les rendez vous").child(pref).child("Date").setValue(date);
+                    databaseReference.child("les rendez vous").child(pref).child("temps").setValue(temps);
+
+                    Toast.makeText(MainActivity7.this, "rejistred", Toast.LENGTH_SHORT).show();
+                    finish();
+                    Intent gh=new Intent(MainActivity7.this,Userkisegel.class);
+                    startActivity(gh);
 
                 }
             }
@@ -115,10 +120,5 @@ RadioGroup radioGroup;
             }
         });
     }
+
 }
-/*    RadioGroup radioGroup1;
-    Boolean n1,n2,n3,n4,n5,n6,n7,n8;
-    String fi;
-    Bundle extras;
-    int reserve;
-String data ;*/

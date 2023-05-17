@@ -42,7 +42,8 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.6"><![CDATA[>
+            app:layout_constraintVertical_bias="0.6"
+            tools:ignore="ExtraText"><![CDATA[>
 
             ]]>
 
@@ -116,7 +117,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="-10dp"
                     android:layout_weight="1"
-                    android:text="Contité d'hémoglobine" />
+                    android:text="le nombre de globule rouge" />
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
@@ -128,7 +129,7 @@
                     app:endIconTint="@color/purple_500">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/démog"
+                        android:id="@+id/globiler"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Entré la contité"
@@ -228,5 +229,17 @@
                 </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
         </LinearLayout>
+
+        <ImageView
+            android:id="@+id/imageView12"
+            android:layout_width="48dp"
+            android:layout_height="32dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.01"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.06"
+            app:srcCompat="@drawable/tivk" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

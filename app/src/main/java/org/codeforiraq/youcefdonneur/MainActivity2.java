@@ -1,20 +1,28 @@
 package org.codeforiraq.youcefdonneur;
 
+import static org.codeforiraq.youcefdonneur.Sing.MYKEY;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.HashMap;
 
@@ -22,7 +30,12 @@ public class MainActivity2 extends AppCompatActivity {
     private EditText name,phone,password,typedesang,email,sex;
     private Button button;
     DatabaseReference databaseReference;
-
+    DatabaseReference myRef = FirebaseDatabase.getInstance().getReferenceFromUrl("https://pemition-f968a-default-rtdb.firebaseio.com/");
+    Bundle extras,extras1;
+    ImageView imageView;
+    String d1;
+    SharedPreferences preferences1;
+    String pref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,11 +48,13 @@ public class MainActivity2 extends AppCompatActivity {
         email=findViewById(R.id.email);
         sex=findViewById(R.id.sex);
         button=findViewById(R.id.button3);
+        imageView=findViewById(R.id.imageView2);
+        getr1();
 
         sex.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                RadioGroup radioGroup=findViewById(R.id.n1);
+                RadioGroup radioGroup=findViewById(R.id.n2);
                 radioGroup.setVisibility(View.VISIBLE);
                 radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
                     @Override
@@ -134,7 +149,7 @@ public class MainActivity2 extends AppCompatActivity {
         sex.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                RadioGroup radioGroup = findViewById(R.id.n1);
+                RadioGroup radioGroup = findViewById(R.id.n2);
                 radioGroup.setVisibility(View.VISIBLE);
                 radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
                     @Override
@@ -164,7 +179,7 @@ public class MainActivity2 extends AppCompatActivity {
         typedesang.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                RadioGroup radioGroup2 = findViewById(R.id.n1);
+                RadioGroup radioGroup2 = findViewById(R.id.n2);
                 radioGroup2.setVisibility(View.VISIBLE);
                 radioGroup2.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
                     @Override
@@ -216,6 +231,36 @@ public class MainActivity2 extends AppCompatActivity {
                         }
                     }
                 });
+            }
+        });
+    }
+    public void getr1(){
+        myRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                preferences1=getSharedPreferences(MYKEY,0);
+                pref= preferences1.getString("key","not found");
+
+                Log.d("youcef logging", "pref : " + pref);
+                if(snapshot.exists()) {
+
+                    d1 = snapshot.child("user").child(pref).child("le sex").getValue(String.class);
+
+
+
+                    if(d1.equals("Homme")){
+                        imageView.setImageResource(R.drawable.profilefff);
+                    }
+
+
+                }else{
+                    Toast.makeText(MainActivity2.this, "fild to load data", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
             }
         });
     }

@@ -124,7 +124,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="-70dp"
-                android:text="Modifé le conte"
+                android:text="Modifé le compte"
                 android:textColor="#E10808"
                 android:textSize="30dp" />
         </LinearLayout>
@@ -215,7 +215,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <RadioGroup
-            android:id="@+id/n1"
+            android:id="@+id/n2"
             android:layout_width="318dp"
             android:layout_height="119dp"
             android:layout_marginTop="87dp"
@@ -247,7 +247,7 @@
         </RadioGroup>
 
         <RadioGroup
-            android:id="@+id/n1"
+            android:id="@+id/n2"
             android:layout_width="318dp"
             android:layout_height="119dp"
             android:layout_marginTop="-88dp"

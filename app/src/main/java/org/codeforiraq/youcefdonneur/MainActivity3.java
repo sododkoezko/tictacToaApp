@@ -2,7 +2,6 @@ package org.codeforiraq.youcefdonneur;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -11,19 +10,16 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
-import org.codeforiraq.youcefdonneur.R;
-
 public class MainActivity3 extends AppCompatActivity {
-
     Button button;
     Bundle extras;
     Boolean n1,n2,n3,n4;
     RadioGroup radioGroup1, radioGroup2,radioGroup3, radioGroup4;
-    @SuppressLint({"MissingInflatedId", "WrongViewCast"})
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_rendivou);
         button=findViewById(R.id.button5);
 
         radioGroup1=findViewById(R.id.group1);
@@ -44,7 +40,7 @@ public class MainActivity3 extends AppCompatActivity {
             public void onClick(View view) {
 
                 if(n1 & n2 & n3 & n4){
-                    Intent i=new Intent(MainActivity3.this,MainActivity4.class );
+                    Intent i=new Intent(MainActivity3.this,MainActivity7.class );
 
                     startActivity(i);
 
@@ -55,11 +51,7 @@ public class MainActivity3 extends AppCompatActivity {
 
             }
         });
-
-
-
     }
-
     private void f4() {
         radioGroup4.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -128,7 +120,3 @@ public class MainActivity3 extends AppCompatActivity {
         });
     }
 }
-/* if(n1 & n2 & n3 & n4){
-                    Intent i=new Intent(MainActivity3.this, MainActivity4.class );
-                    i.putExtra("name9",f);
-                    startActivity(i);*/

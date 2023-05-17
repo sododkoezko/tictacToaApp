@@ -159,7 +159,7 @@
                     app:endIconTint="@color/purple_500">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/globiler"
+                        android:id="@+id/démog"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Entré la contité" />

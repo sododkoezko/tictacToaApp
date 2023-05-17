@@ -22,7 +22,7 @@ public class InterfaceAdmin extends AppCompatActivity {
     ImageView imageView1,imageView2;
 TextView textView1,textView2,textView3,textView4,textView5,textView6,textView7,textView8;
 String s1,s2, s3,s4, s5,s6, s7,s8;
-Button button;
+
     DatabaseReference myRef= FirebaseDatabase.getInstance().getReferenceFromUrl("https://pemition-f968a-default-rtdb.firebaseio.com/");
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,20 +39,20 @@ Button button;
         textView6=findViewById(R.id.textView9);
         textView7=findViewById(R.id.textView10);
         textView8=findViewById(R.id.textView11);
-        button=findViewById(R.id.button7);
+
         myRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
                 if(snapshot.exists()) {
-                    s1 = snapshot.child("Contité").child("Contité A+").getValue(String.class);
-                    s2 = snapshot.child("Contité").child("Contité B+").getValue(String.class);
-                    s3 = snapshot.child("Contité").child("Contité AB+").getValue(String.class);
-                    s4 = snapshot.child("Contité").child("Contité A-").getValue(String.class);
-                    s5 = snapshot.child("Contité").child("Contité B-").getValue(String.class);
-                    s6 = snapshot.child("Contité").child("Contité AB-").getValue(String.class);
-                    s7 = snapshot.child("Contité").child("Contité o+").getValue(String.class);
-                    s8 = snapshot.child("Contité").child("Contité o-").getValue(String.class);
+                    s1 = snapshot.child("Quantité").child("Quantité A+").getValue(String.class);
+                    s2 = snapshot.child("Quantité").child("Quantité B+").getValue(String.class);
+                    s3 = snapshot.child("Quantité").child("Quantité AB+").getValue(String.class);
+                    s4 = snapshot.child("Quantité").child("Quantité A-").getValue(String.class);
+                    s5 = snapshot.child("Quantité").child("Quantité B-").getValue(String.class);
+                    s6 = snapshot.child("Quantité").child("Quantité AB-").getValue(String.class);
+                    s7 = snapshot.child("Quantité").child("Quantité o+").getValue(String.class);
+                    s8 = snapshot.child("Quantité").child("Quantité o-").getValue(String.class);
                     textView1.setText(s2+" poches");
                     textView2.setText(s5+" poches");
                     textView3.setText(s3+" poches");
@@ -73,13 +73,7 @@ Button button;
 
             }
         });
-                button.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Intent fil=new Intent(InterfaceAdmin.this,fiche.class);
-                        startActivity(fil);
-                    }
-                });
+
         imageView2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

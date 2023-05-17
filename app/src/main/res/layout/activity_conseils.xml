@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/banner"
+    tools:context=".Conseils">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="383dp"
+        android:layout_height="705dp"
+        android:background="@drawable/button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5">
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="369dp"
+            android:layout_height="559dp"
+            android:text="• Fumer est nocif pour la santé, nous vous déconseillons de fumer de quelque manière que ce soit, veuillez
+Ne fumez pas pendant la prochaine heure.
+• Buvez plus de liquides que d'habitude au cours des prochaines 24 heures.
+• Évitez les exercices vigoureux ou les travaux pénibles immédiatement après le don.
+• Retirez le patch quelques heures après le don.
+• Si le site de ponction de l'aiguille saigne, levez votre bras et appuyez votre pouce contre le saignement.
+• Si vous vous sentez étourdi, allongez-vous sur le dos, si possible, ou asseyez-vous jusqu'à ce que ces symptômes disparaissent. Mais si ces symptômes persistent, vous devez soit retourner à la banque de sang, soit consulter un médecin.
+• Si vous ressentez de la fièvre ou de la diarrhée dans les 12 à 24 heures suivant le don, ou si vous saignez au site de prélèvement ou tout problème ou inconfort dans les 12 à 24 heures suivant le don qui pourrait affecter négativement votre sécurité et celle des produits sanguins, vous contacter la banque de sang au 2889999 poste 14914 /14915
+• Si votre travail nécessite de faire fonctionner de la machinerie lourde ou des grues, de conduire des trains ou des sacs de taxi, de monter des escaliers ou de construire des échafaudages, nous vous conseillons de ne retourner au travail que 12 heures après le don. Quant aux navigateurs de l'avion, nous espérons qu'ils ne travailleront pas pendant 72 heures après le don. Sang total ou plaquettes
+• Votre corps remplacera le montant donné très rapidement. Cependant, veuillez attendre au moins deux mois avant votre don de sang total et deux semaines pour votre don de plaquettes
+
+Au nom du personnel de la banque de sang de King Fahd Medical City, vous avez notre plus grande appréciation et gratitude pour votre don, et nous espérons que vous nous rendrez visite tous les deux mois.
+Et sachez qu'une goutte de sang peut sauver la vie d'une personne."
+            android:textColor="#000000"
+            android:textSize="13.5sp"
+            android:textStyle="italic"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.657" />
+
+        <ImageView
+            android:id="@+id/imageView11"
+            android:layout_width="36dp"
+            android:layout_height="30dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.025"
+            app:srcCompat="@drawable/tivk" />
+
+        <TextView
+            android:id="@+id/textView22"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-590dp"
+            android:text="Conseils aux donateurs"
+            android:textColor="#459523"
+            android:textSize="24sp"
+            android:textStyle="bold|italic"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.5" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

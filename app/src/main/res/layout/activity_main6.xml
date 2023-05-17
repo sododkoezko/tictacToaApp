@@ -242,10 +242,10 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <RadioGroup
-            android:id="@+id/n1"
+            android:id="@+id/n2"
             android:layout_width="318dp"
             android:layout_height="119dp"
-            android:layout_marginTop="87dp"
+            android:layout_marginTop="60dp"
             android:background="#000000"
             android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -275,9 +275,9 @@
 
         <RadioGroup
             android:id="@+id/n1"
-            android:layout_width="318dp"
-            android:layout_height="119dp"
-            android:layout_marginTop="-88dp"
+            android:layout_width="336dp"
+            android:layout_height="388dp"
+            android:layout_marginTop="150dp"
             android:background="#000000"
             android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="parent"

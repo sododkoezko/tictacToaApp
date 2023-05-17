@@ -1,7 +1,5 @@
 package org.codeforiraq.youcefdonneur;
 
-import static org.codeforiraq.youcefdonneur.Sing.MYKEY;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,7 +9,6 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -29,9 +26,9 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class Admin extends AppCompatActivity {
-LinearLayout layout;
-Button button;
-TextView sing;
+    LinearLayout layout;
+    Button button;
+    TextView sing;
     private FirebaseAuth mAuth;
     TextInputEditText phone,password;
     SharedPreferences sharedPreferences;
@@ -60,49 +57,9 @@ TextView sing;
                     Toast.makeText(Admin.this, "Compléter tous les champs", Toast.LENGTH_SHORT).show();
                 }
                 else{
-
-                   // if(!phone1.isEmpty()||!password1.isEmpty()){
-                     //   emailAuth(phone1,password1);
-                    //}
-
-
-
-                  databaseReference.child("user").addListenerForSingleValueEvent(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(@NonNull DataSnapshot snapshot) {
-                            if(snapshot.hasChild(phone1)){
-                                String getpassword=snapshot.child(phone1).child("password").getValue(String.class);
-                                if(getpassword.equals(password1)){
-                                    Toast.makeText(Admin.this, "seccessfully loghged in", Toast.LENGTH_SHORT).show();
-                                    sharedPreferences = getSharedPreferences(MYKEY,0);
-                                    SharedPreferences.Editor editor=sharedPreferences.edit();
-                                    editor.putString("ke",phone1);
-                                    editor.commit();
-                                    Intent g=new Intent(Admin.this,Userkisegel.class);
-
-                                   // g.putExtra("phone",phone1);
-                                    startActivity(g);
-
-                                }
-                                else{
-                                    Toast.makeText(Admin.this, "Wrong Password", Toast.LENGTH_SHORT).show();
-
-                                }
-                            } else{
-                                Toast.makeText(Admin.this, "Wrong Password", Toast.LENGTH_SHORT).show();
-
-                            }
-                        }
-
-                        @Override
-                        public void onCancelled(@NonNull DatabaseError error) {
-
-                        }
-                    });}
-                emailAuth(phone1,password1);
-
-
-                 }
+                    adminAuth(phone1,password1);
+                }
+            }
 
         });
 
@@ -116,8 +73,46 @@ TextView sing;
 
 
     }
-    private void emailAuth(String em,String pass){
-        mAuth.signInWithEmailAndPassword(em, pass)
+
+    public void userAuth(String phone, String password){
+        databaseReference.child("user").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(snapshot.hasChild(phone)){
+                    String getpassword=snapshot.child(phone).child("password").getValue(String.class);
+                    if(getpassword.equals(password)){
+                        Toast.makeText(Admin.this, "seccessfully loghged in", Toast.LENGTH_SHORT).show();
+                        sharedPreferences = getSharedPreferences(MYKEY,0);
+                        SharedPreferences.Editor editor=sharedPreferences.edit();
+                        editor.putString("key",phone);
+                        editor.commit();
+                        Intent g=new Intent(Admin.this,Userkisegel.class);
+
+                        // g.putExtra("phone",phone1);
+                        startActivity(g);
+
+                    }
+                    else{
+                        Toast.makeText(Admin.this, "Wrong Password", Toast.LENGTH_SHORT).show();
+
+                    }
+                } else{
+                    Toast.makeText(Admin.this, "Authentification failed.",
+                            Toast.LENGTH_SHORT).show();
+
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
+    }
+    private void adminAuth(String email, String pass){
+        mAuth.signInWithEmailAndPassword(email, pass)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
@@ -125,7 +120,7 @@ TextView sing;
                             // Sign in success, update UI with the signed-in user's information
                             //Log.d(TAG, "signInWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
-                            Toast.makeText(Admin.this, "Authentication seccess.",
+                            Toast.makeText(Admin.this, "Authentification seccess.",
                                     Toast.LENGTH_SHORT).show();
                             Intent intent=new Intent(Admin.this,AdminKISEJEL.class);
                             startActivity(intent);
@@ -133,8 +128,7 @@ TextView sing;
                         } else {
                             // If sign in fails, display a message to the user.
                             //Log.w(TAG, "signInWithEmail:failure", task.getException());
-                            Toast.makeText(Admin.this, "Authentication failed.",
-                                    Toast.LENGTH_SHORT).show();
+                            userAuth(email, pass);
                             //updateUI(null);
                         }
                     }

@@ -32,7 +32,7 @@ public class fiche extends AppCompatActivity {
         santé=findViewById(R.id.santé);
         démog=findViewById(R.id.démog);
         globileb =findViewById(R.id.globileb);
-        globiler=findViewById(R.id.globiler);
+        globiler=findViewById(R.id.démog);
         accép=findViewById(R.id.accép);
         déma =findViewById(R.id.déma);
         button=findViewById(R.id.button2);

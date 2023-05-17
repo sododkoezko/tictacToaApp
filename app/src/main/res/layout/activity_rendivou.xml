@@ -41,7 +41,7 @@
             android:text="pour prener un rendez-vous vous dever répondre a quelques question"
             android:textColor="#000000"
             android:textSize="16sp"
-            android:visibility="invisible"
+            android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.526"
@@ -82,7 +82,7 @@
                         android:layout_width="392dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="TextView" />
+                        android:text="Etes-vous malade ou nom ?" />
 
                     <RadioGroup
                         android:id="@+id/group1"
@@ -94,7 +94,7 @@
                             android:id="@+id/radioButton1"
                             android:layout_width="match_parent"
                             android:layout_height="29dp"
-                            android:text="RadioButton"
+                            android:text="Oui"
                             android:textSize="12sp"
                             tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
@@ -102,7 +102,7 @@
                             android:id="@+id/radioButton3"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="RadioButton"
+                            android:text="Non"
                             android:textSize="12sp"
                             tools:ignore="DuplicateIds,TouchTargetSizeCheck" />
                     </RadioGroup>
@@ -119,7 +119,7 @@
                         android:layout_width="91dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="TextView" />
+                        android:text="Avez-vous des tatouages sur votre corps ?" />
 
                     <RadioGroup
                         android:id="@+id/group2"
@@ -131,7 +131,7 @@
                             android:id="@+id/radioButton3"
                             android:layout_width="match_parent"
                             android:layout_height="29dp"
-                            android:text="RadioButton"
+                            android:text="Oui"
                             android:textSize="12sp"
                             tools:ignore="DuplicateIds,TouchTargetSizeCheck" />
 
@@ -139,7 +139,7 @@
                             android:id="@+id/radioButton4"
                             android:layout_width="match_parent"
                             android:layout_height="27dp"
-                            android:text="RadioButton"
+                            android:text="Non"
                             android:textSize="12sp"
                             tools:ignore="TouchTargetSizeCheck" />
                     </RadioGroup>
@@ -155,7 +155,7 @@
                         android:layout_width="392dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="TextView" />
+                        android:text="Vous aves plus de 17 ans" />
 
                     <RadioGroup
                         android:id="@+id/group3"
@@ -167,7 +167,7 @@
                             android:id="@+id/radioButton5"
                             android:layout_width="match_parent"
                             android:layout_height="29dp"
-                            android:text="RadioButton"
+                            android:text="Oui"
                             android:textSize="12sp"
                             tools:ignore="TouchTargetSizeCheck" />
 
@@ -175,7 +175,7 @@
                             android:id="@+id/radioButton6"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="RadioButton"
+                            android:text="Non"
                             android:textSize="12sp"
                             tools:ignore="DuplicateIds,TouchTargetSizeCheck" />
                     </RadioGroup>
@@ -192,7 +192,8 @@
                         android:layout_width="396dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="TextView" />
+                        android:text="vous peser plus de 50 Kg ?"
+                       />
 
                     <RadioGroup
                         android:id="@+id/group4"
@@ -204,7 +205,7 @@
                             android:id="@+id/radioButton7"
                             android:layout_width="match_parent"
                             android:layout_height="31dp"
-                            android:text="RadioButton"
+                            android:text="Oui"
                             android:textSize="12sp"
                             tools:ignore="TouchTargetSizeCheck" />
 
@@ -212,7 +213,7 @@
                             android:id="@+id/radioButton8"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="RadioButton"
+                            android:text="Non"
                             android:textSize="12sp"
                             tools:ignore="TouchTargetSizeCheck" />
                     </RadioGroup>
@@ -225,7 +226,7 @@
                 android:id="@+id/button5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Click"
+                android:text="L'étape swivante"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.497"

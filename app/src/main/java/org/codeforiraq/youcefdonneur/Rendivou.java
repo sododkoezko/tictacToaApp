@@ -40,7 +40,7 @@ public class Rendivou extends AppCompatActivity {
             public void onClick(View view) {
 
                 if(n1 & n2 & n3 & n4){
-                    Intent i=new Intent(Rendivou.this,MainActivity4.class );
+                    Intent i=new Intent(Rendivou.this,MainActivity7.class );
 
                     startActivity(i);
 

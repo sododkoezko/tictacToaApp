@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -22,6 +23,8 @@ public class MainActivity6 extends AppCompatActivity {
     TextInputEditText name,phone,password,confpassword,typedesang,email,sex;
     DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReferenceFromUrl("https://pemition-f968a-default-rtdb.firebaseio.com/");
     private Button button;
+    SharedPreferences sharedPreferences;
+    static final String MYKEY="secret";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,18 +39,19 @@ public class MainActivity6 extends AppCompatActivity {
         sex=findViewById(R.id.sex);
         button=findViewById(R.id.button3);
 
-        check2();
+
         check1();
+        check2();
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String nametxt=name.getText().toString();
                 String phonetxt=phone.getText().toString();
-                String typedesangtxt=typedesang.getHint().toString();
-                String passwordtxt=password.getHint().toString();
-                String conpss=confpassword.getHint().toString();
-                String sextxt=sex.getHint().toString();
-                String emailtxt=email.getHint().toString();
+                String typedesangtxt=typedesang.getText().toString();
+                String passwordtxt=password.getText().toString();
+                String conpss=confpassword.getText().toString();
+                String sextxt=sex.getText().toString();
+                String emailtxt=email.getText().toString();
                 if(nametxt.isEmpty()||emailtxt.isEmpty()||
                         typedesangtxt.isEmpty()||passwordtxt.isEmpty()||conpss.isEmpty()||sextxt.isEmpty()||emailtxt.isEmpty()){
                     Toast.makeText(MainActivity6.this, "Compléter tous les champs", Toast.LENGTH_SHORT).show();
@@ -76,8 +80,12 @@ public class MainActivity6 extends AppCompatActivity {
                                 databaseReference.child("user").child(phonetxt).child("le sex").setValue(sextxt);
                                 Toast.makeText(MainActivity6.this, "rejistred", Toast.LENGTH_SHORT).show();
                                 finish();
+                                sharedPreferences = getSharedPreferences(MYKEY,0);
+                                SharedPreferences.Editor editor=sharedPreferences.edit();
+                                editor.putString("key",phonetxt);
+                                editor.commit();
                                 Intent i=new Intent(MainActivity6.this,Userkisegel.class);
-                                i.putExtra("name",nametxt);
+                               // i.putExtra("name",nametxt);
                                 startActivity(i);
                             }
                         }
@@ -105,7 +113,7 @@ public class MainActivity6 extends AppCompatActivity {
         sex.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                RadioGroup radioGroup=findViewById(R.id.n1);
+                RadioGroup radioGroup=findViewById(R.id.n2);
                 radioGroup.setVisibility(View.VISIBLE);
                 radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
                     @Override

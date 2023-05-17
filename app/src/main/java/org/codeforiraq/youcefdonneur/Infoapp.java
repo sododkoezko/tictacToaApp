@@ -7,20 +7,19 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
-public class MainActivity5 extends AppCompatActivity {
+public class Infoapp extends AppCompatActivity {
     ImageView imageView;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main5);
-      /*  imageView=findViewById(R.id.imageView11);
+        setContentView(R.layout.activity_infoapp);
+        imageView=findViewById(R.id.imageView11);
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i=new Intent(MainActivity5.this,Userkisegel.class);
+                Intent i=new Intent(Infoapp.this,Userkisegel.class);
                 startActivity(i);
             }
-        });*/
+        });
     }
 }
